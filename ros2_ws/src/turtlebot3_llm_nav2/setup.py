@@ -7,7 +7,7 @@ package_name = 'turtlebot3_llm_nav2'
 setup(
     name=package_name,
     version='0.0.0',
-    packages=find_packages(include=[package_name]),
+    packages=find_packages(include=[package_name, package_name + '.*']),
     include_package_data=True,
     data_files=[
         ('share/ament_index/resource_index/packages', ['resource/' + package_name]),
@@ -34,7 +34,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'waypoint_navigator = turtlebot3_llm_nav2.scripts.waypoint_navigator:main'
+            'waypoint_navigator = turtlebot3_llm_nav2.script.waypoint_navigator:main'
         ],
     },
 )

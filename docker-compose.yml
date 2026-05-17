@@ -3,13 +3,13 @@ services:
     container_name: llm_dwa
     build: .
     privileged: true
-    network_mode: host
-    ipc: host
-    pid: host
     stdin_open: true
     tty: true
     environment:
       - DISPLAY=:99
+      - TURTLEBOT3_MODEL=burger
+    ports:
+      - "6080:6080"
     volumes:
       - ./ros2_ws:/workspace/ros2_ws
     command: ["/root/start-novnc.sh"]
